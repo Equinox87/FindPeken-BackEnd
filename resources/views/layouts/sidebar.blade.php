@@ -13,8 +13,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                <li class="nav-item">
+                    <a href="{{url('home')}}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -23,7 +23,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
+                    <a href="{{url('pasar')}}" class="nav-link {{ Request::is('pasar') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-store"></i>
                         <p>
                             Master Pasar
@@ -31,13 +31,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                    <a href="{{url('user')}}" class="nav-link {{ Request::is('user') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Logout
+                            Master User
                         </p>
                     </a>
                 </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

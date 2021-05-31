@@ -40,4 +40,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function getImage()
+    {
+        if (!$this->img) {
+            return asset('images/default.png');
+        }
+        return asset('images/' . $this->img);
+    }
 }
