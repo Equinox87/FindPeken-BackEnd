@@ -43,7 +43,7 @@ class HomeController extends Controller
 
         $user = User::all();
         $jmlUser = count($user);
-        $pasar = Pasar::all();
+        $pasar = Pasar::where('pasar_status', 1)->get();
         $jmlPasar = count($pasar);
         return view('layouts.dashboard', compact('tanggal', 'salam', 'jmlUser', 'jmlPasar'));
     }
