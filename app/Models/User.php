@@ -47,6 +47,6 @@ class User extends Authenticatable
         if (!$this->img) {
             return asset('images/default.png');
         }
-        return asset('images/' . $this->img);
+        return asset('images/' . base64_decode($this->img));
     }
 }

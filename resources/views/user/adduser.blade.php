@@ -5,32 +5,32 @@
                 aria-expanded="false">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Pasar</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tambah User</h5>
         </div>
         <div class="card card-body">
-            <form method="POST" enctype="multipart/form-data" action="#" id="formUpload">
+            <form method="POST" enctype="multipart/form-data" action="{{url('user')}}" id="formUpload">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleInput">Nama Pasar</label>
+                    <div class="alert alert-warning" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="alert-heading">Perhatian!!</h4>
+                        <p>Password Default User Baru <strong>123</strong></p>
+                        <hr>
+                        <p class="mb-0">Anda Dapat Mengubah Password Pada Menu Edit User!</p>
+                    </div>
+
+                    <label for="exampleInput">Nama</label>
                     <input type="text" class="form-control {{$errors->has('nama')? 'is-invalid':''}}" id="exampleInput"
                         name="nama" placeholder="Masukan Nama Pasar">
                     @if ($errors->has('nama'))
                     <div class="invalid-feedback">
-                        Silahkan Masukan Nama Pasar
+                        Silahkan Masukan Nama
                     </div>
                     @endif
-                    <label for="exampleFormControlTextarea1">Deskripsi</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi"
-                        placeholder="Masukan Deskripsi Pasar"></textarea>
-                    <label for="exampleFormControlTextarea1">Alamat</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat"
-                        placeholder="Masukan Alamat Pasar"></textarea>
-                    <label for="exampleInput">Latitude</label>
-                    <input type="text" class="form-control" id="exampleInput" name="latitude"
-                        placeholder="Masukan Latitude Pasar">
-                    <label for="exampleInput">Longitude</label>
-                    <input type="text" class="form-control" id="exampleInput" name="longitude"
-                        placeholder="Masukan Longitude Pasar">
+                    <label for="exampleInput">Email</label>
+                    <input type="email" class="form-control" id="exampleInput" name="email" placeholder="Masukan Email">
                     <label for="exampleInput">Gambar</label>
                     <div class="input-group">
                         <div class="custom-file">
@@ -41,7 +41,6 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Tambah</button>
-
             </form>
         </div>
     </div>

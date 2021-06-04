@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pasar;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -40,8 +41,10 @@ class HomeController extends Controller
             $salam = "Selamat Malam !! ";
         }
 
-        $data = User::all();
-        $jmlUser = count($data);
-        return view('layouts.dashboard', compact('tanggal', 'salam', 'jmlUser'));
+        $user = User::all();
+        $jmlUser = count($user);
+        $pasar = Pasar::all();
+        $jmlPasar = count($pasar);
+        return view('layouts.dashboard', compact('tanggal', 'salam', 'jmlUser', 'jmlPasar'));
     }
 }

@@ -14,11 +14,13 @@
 </div>
 
 <section class="content">
-    <div class="alert alert-success" role="alert">
-        {{$tanggal}}
-        @if(Auth::check())
-        <p>{{$salam}}, {{auth()->user()->name}}</p>
-        @endif
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{$tanggal}}</strong></br>
+        <strong>Halo, {{$salam}} </strong></br>
+        Selamat Datang, {{auth()->user()->name}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -27,14 +29,15 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{$jmlPasar}}</h3>
 
                         <p>Pasar</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-store"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{url('pasar')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -48,7 +51,8 @@
                     <div class="icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{url('user')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->

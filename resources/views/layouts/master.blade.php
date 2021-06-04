@@ -119,23 +119,50 @@
     <script src="{{asset('template/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
     <script src="{{asset('template/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
     <script src="{{asset('template/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+    <script src="{{asset('css/alert.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+
         $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+
+        // Sweet allert
+        @if(Session::has('gagal'))
+        swal({
+            text: "{{Session::get('gagal')}}",
+            icon: "warning",
+        });
+        @elseif(Session::has('sukses'))
+        swal({
+            text: "{{Session::get('sukses')}}",
+            icon: "success",
+        });
+        @elseif(count($errors) > 0)
+        swal({
+            text: "Data Belum Lengkap!",
+            icon: "error",
+        });
+        @endif
     </script>
 </body>
 

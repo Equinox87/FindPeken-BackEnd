@@ -19,7 +19,7 @@
                 <i class="fas fa-plus-square"></i> Tambah
             </a>
         </div>
-
+        @include('user.adduser')
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -44,10 +44,11 @@
                                         <td>{{$value->name}}</td>
                                         <td>{{$value->email}}</td>
                                         <td class="text-center">
-                                            <a class="btn-outline-primary btn-sm" href="#" role="button"><i
+                                            <a class="btn-outline-primary btn-sm"
+                                                href="{{ URL::to('/')}}/user/edit/{{$value->id}}" role="button"><i
                                                     class="far fa-edit"></i></a>|<a
-                                                class="btn-outline-danger btn-sm delete film" href="#" role="button"
-                                                id="#" role="button"><i class="far fa-trash-alt"></i></a>
+                                                class="btn-outline-danger btn-sm delete user" href="#" role="button"
+                                                id="{{$value->id}}" role="button"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

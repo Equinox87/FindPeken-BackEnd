@@ -23,7 +23,8 @@
 
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('pasar')}}" class="nav-link {{ Request::is('pasar') ? 'active' : '' }}">
+                    <a href="{{url('pasar')}}"
+                        class="nav-link {{ Request::is('pasar')|| Request::is('pasar/edit/*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-store"></i>
                         <p>
                             Master Pasar
@@ -31,7 +32,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('user')}}" class="nav-link {{ Request::is('user') ? 'active' : '' }}">
+                    <a href="{{url('user')}}"
+                        class="nav-link {{ Request::is('user') || Request::is('user/edit/*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Master User

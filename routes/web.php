@@ -23,9 +23,19 @@ Route::get('/', function () {
 Route::get('logout', [UserController::class, 'logout']);
 
 Auth::routes();
-
 Route::get('home', [HomeController::class, 'index'])->name('home');
-Route::get('pasar', [PasarController::class, 'pasar'])->name('pasar');
-Route::post('pasar', [PasarController::class, 'addpasar'])->name('pasar');
 
+// data pasar
+Route::get('pasar', [PasarController::class, 'pasar'])->name('pasar');
+Route::post('pasar', [PasarController::class, 'addpasar'])->name('addpasar');
+Route::post('pasar/edit/{id}', [PasarController::class, 'edit'])->name('editpasar');
+Route::get('pasar/edit/{id}', [PasarController::class, 'edit'])->name('editpasar');
+Route::post('pasar/edit/{id}', [PasarController::class, 'update'])->name('updatepasar');
+Route::get('pasar/hapus/{id}', [PasarController::class, 'delete'])->name('deletepasar');
+
+// data user
 Route::get('user', [UserController::class, 'user']);
+Route::post('user', [UserController::class, 'adduser']);
+Route::get('user/edit/{id}', [UserController::class, 'edit']);
+Route::post('user/edit/{id}', [UserController::class, 'update']);
+Route::get('user/hapus/{id}', [UserController::class, 'delete']);

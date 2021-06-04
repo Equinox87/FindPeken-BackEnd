@@ -14,4 +14,12 @@ class Pasar extends Model
     protected $fillable = [
         'pasar_nama', 'pasar_deskripsi', 'pasar_alamat', 'latitude', 'longitude', 'pasar_gambar', 'pasar_status'
     ];
+
+    public function getImage()
+    {
+        if (!$this->pasar_gambar) {
+            return asset('imgpasar/default.jpg');
+        }
+        return asset('imgpasar/' . base64_decode($this->pasar_gambar));
+    }
 }

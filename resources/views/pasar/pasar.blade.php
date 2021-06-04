@@ -38,7 +38,7 @@
                                         <th>Alamat</th>
                                         <th>Latitude</th>
                                         <th>Longitude</th>
-                                        <th>Status</th>
+                                        {{-- <th>Status</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -51,12 +51,14 @@
                                         <td>{{$value->pasar_alamat}}</td>
                                         <td>{{$value->latitude}} </td>
                                         <td>{{$value->longitude}}</td>
-                                        <td>{{$value->pasar_status}}</td>
+                                        {{-- <td>{{$value->pasar_status}}</td> --}}
                                         <td class="text-center">
-                                            <a class="btn-outline-primary btn-sm" href="#" role="button"><i
-                                                    class="far fa-edit"></i></a>|<a
-                                                class="btn-outline-danger btn-sm delete film" href="#" role="button"
-                                                id="#" role="button"><i class="far fa-trash-alt"></i></a>
+                                            <a class="btn-outline-primary btn-sm"
+                                                href="{{ URL::to('/')}}/pasar/edit/{{$value->pasar_id}}"
+                                                role="button"><i class="far fa-edit edit"></i></a>|<a
+                                                class="btn-outline-danger btn-sm delete pasar" href="#" role="button"
+                                                id="{{$value->pasar_id}}" role="button"><i
+                                                    class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
