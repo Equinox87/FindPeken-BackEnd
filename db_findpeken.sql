@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2021 at 11:06 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Jun 04, 2021 at 11:10 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -91,6 +91,14 @@ CREATE TABLE `tbl_pasar` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `tbl_pasar`
+--
+
+INSERT INTO `tbl_pasar` (`pasar_id`, `pasar_nama`, `pasar_deskripsi`, `pasar_alamat`, `latitude`, `longitude`, `pasar_gambar`, `pasar_status`, `created_at`, `updated_at`) VALUES
+(1, 'Pasar Ungasan', 'test', 'Ungasan', -8.825152365949586, 115.16761181567541, 'cGFzYXJ1bmdhc2FuLmpwZw==', 1, '2021-06-01 15:56:51', '2021-06-04 04:45:26'),
+(2, 'test', 'test', 'adada', 343544655, 3241251, NULL, 0, '2021-06-04 03:27:13', '2021-06-04 04:56:16');
+
 -- --------------------------------------------------------
 
 --
@@ -99,6 +107,7 @@ CREATE TABLE `tbl_pasar` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -112,8 +121,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@findpeken.com', NULL, '$2y$10$9ZawgfFrryiaS.i0Gk9KquTy3GZIdMw33RTJA8Nf.8pj2Kg73uXlW', NULL, '2021-05-31 01:03:36', '2021-05-31 01:03:36');
+INSERT INTO `users` (`id`, `img`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Admin', 'admin@findpeken.com', NULL, '$2y$10$9ZawgfFrryiaS.i0Gk9KquTy3GZIdMw33RTJA8Nf.8pj2Kg73uXlW', NULL, '2021-05-31 01:03:36', '2021-05-31 01:03:36'),
+(4, NULL, 'Admin 1', 'admin1@findpeken.com', NULL, '$2y$10$fbh1wYpqYrDbDIliZ1uKhOvxeXSTYtlDlqiB/0dkFXmiodK268Hpi', NULL, '2021-06-04 07:54:48', '2021-06-04 07:54:48');
 
 --
 -- Indexes for dumped tables
@@ -171,13 +181,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `tbl_pasar`
 --
 ALTER TABLE `tbl_pasar`
-  MODIFY `pasar_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `pasar_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
