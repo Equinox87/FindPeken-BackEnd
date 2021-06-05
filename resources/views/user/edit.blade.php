@@ -31,8 +31,13 @@
                         </div>
                         @endif
                         <label for="exampleInput">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Masukan Email"
-                            value="{{$data->email}}">
+                        <input type="email" class="form-control {{$errors->has('email')? 'is-invalid':''}}" id="email"
+                            name="email" placeholder="Masukan Email" value="{{$data->email}}">
+                        @if ($errors->has('email'))
+                        <div class="invalid-feedback">
+                            Silahkan Masukan Email
+                        </div>
+                        @endif
                         <label for="exampleInput">Gambar</label>
                         <div class="input-group">
                             <div class="custom-file">
