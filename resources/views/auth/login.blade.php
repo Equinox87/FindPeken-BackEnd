@@ -6,7 +6,10 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>FindPeken</b></a>
+            <a href="{{url('home')}}" class="brand-link">
+                <img src="{{asset('template/dist/img/LogoFindPeken.png')}}" alt="FindPeken Logo Large"
+                    class="brand-image-xs logo-xl" style="left: 100px">
+            </a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>

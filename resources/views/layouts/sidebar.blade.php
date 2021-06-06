@@ -1,8 +1,10 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{url('home')}}" class="brand-link">
-        <img src="{{asset('template/dist/img/LogoFindPeken1.png')}}" alt="FindPeken Logo" class="brand-image">
-        <span class="brand-text font-weight-bold">FindPeken</span>
+    <a href="{{url('home')}}" class="brand-link logo-switch">
+        <img src="{{asset('template/dist/img/LogoFindPeken1.png')}}" alt="FindPeken Logo Small"
+            class="brand-image-xl logo-xs">
+        <img src="{{asset('template/dist/img/LogoFindPeken.png')}}" alt="FindPeken Logo Large"
+            class="brand-image-xs logo-xl" style="left: 50px">
     </a>
 
     <!-- Sidebar -->
