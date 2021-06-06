@@ -16,10 +16,15 @@
 <div class="content">
     <div class="alert alert-info alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4><i class="icon fa fa-info"></i> Selamat Datang</h4>
-        <br>
-        <h5>Halo, {{auth()->user()->name}} {{$salam}}</h5>
-
+        <div class="row">
+            <div class="col-sm-1" style="font-size: 50px;">
+                <i class="fas fa-bullhorn" style="transform: rotate(-21deg);"></i>
+            </div>
+            <div class="col mt-1">
+                <h4> Selamat Datang</h4>
+                <h5>Halo, {{auth()->user()->name}} {{$salam}}</h5>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container-fluid">
