@@ -32,13 +32,13 @@ class HomeController extends Controller
         $jam = date("H:i:s");
         $a = date("H");
         if (($a >= 6) && ($a <= 11)) {
-            $salam = "Selamat Pagi !! ";
+            $salam = "Selamat Pagi ! ";
         } else if (($a >= 11) && ($a <= 15)) {
-            $salam = "Selamat  Siang !! ";
+            $salam = "Selamat  Siang ! ";
         } elseif (($a > 15) && ($a <= 18)) {
-            $salam = "Selamat Sore !! ";
+            $salam = "Selamat Sore ! ";
         } else {
-            $salam = "Selamat Malam !! ";
+            $salam = "Selamat Malam ! ";
         }
 
         $user = User::all();

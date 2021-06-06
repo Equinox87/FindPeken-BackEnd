@@ -13,51 +13,50 @@
     </div><!-- /.container-fluid -->
 </div>
 
-<section class="content">
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>{{$tanggal}}</strong></br>
-        <strong>Halo, {{$salam}} </strong></br>
-        Selamat Datang, {{auth()->user()->name}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3>{{$jmlPasar}}</h3>
+<div class="content">
+    <div class="alert alert-info alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-info"></i> Selamat Datang</h4>
+        <br>
+        <h5>Halo, {{auth()->user()->name}} {{$salam}}</h5>
 
-                        <p>Pasar</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <a href="{{url('pasar')}}" class="small-box-footer">More info <i
-                            class="fas fa-arrow-circle-right"></i></a>
+    </div>
+</div>
+<div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{$jmlPasar}}</h3>
+
+                    <p>Pasar</p>
                 </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-success">
-                    <div class="inner">
-                        <h3>{{$jmlUser}}</h3>
-                        <p>Admin</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <a href="{{url('user')}}" class="small-box-footer">More info <i
-                            class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon">
+                    <i class="fas fa-store"></i>
                 </div>
+                <a href="{{url('pasar')}}" class="small-box-footer">More info <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <!-- ./col -->
         </div>
-        <!-- /.row -->
-    </div><!-- /.container-fluid -->
-</section>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>{{$jmlUser}}</h3>
+                    <p>Admin</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <a href="{{url('user')}}" class="small-box-footer">More info <i
+                        class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+    <!-- /.row -->
+</div><!-- /.container-fluid -->
 @endsection()

@@ -16,9 +16,6 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-
-                <a class="dropdown-item" href="{{url('/konsumen/profil/'.auth()->user()->id)}}">Profil</a>
-
                 <a class="dropdown-item" id="logout" href="{{url('logout')}}">Logout</a>
 
             </div>
