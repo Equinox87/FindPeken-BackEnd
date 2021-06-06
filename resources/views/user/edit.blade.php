@@ -32,7 +32,7 @@
                         @endif
                         <label for="exampleInput">Email</label>
                         <input type="email" class="form-control {{$errors->has('email')? 'is-invalid':''}}" id="email"
-                            name="email" placeholder="Masukan Email" value="{{$data->email}}">
+                            name="email" placeholder="Masukan Email" value="{{$data->email}}" readonly>
                         @if ($errors->has('email'))
                         <div class="invalid-feedback">
                             Silahkan Masukan Email
