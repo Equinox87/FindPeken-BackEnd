@@ -34,7 +34,7 @@
                         @endif
                         <label for="exampleFormControlTextarea1">Deskripsi</label>
                         <textarea class="form-control {{$errors->has('deskripsi')? 'is-invalid':''}}" id="deskripsi"
-                            rows="1" name="deskripsi"
+                            rows="3" name="deskripsi"
                             placeholder="Masukan Deskripsi Pasar">{{$data->pasar_deskripsi}}</textarea>
                         @if ($errors->has('deskripsi'))
                         <div class="invalid-feedback">
@@ -42,7 +42,7 @@
                         </div>
                         @endif
                         <label for="alamat">Alamat</label>
-                        <textarea class="form-control {{$errors->has('alamat')? 'is-invalid':''}}" id="alamat" rows="1"
+                        <textarea class="form-control {{$errors->has('alamat')? 'is-invalid':''}}" id="alamat" rows="3"
                             name="alamat" placeholder="Masukan Alamat Pasar">{{$data->pasar_alamat}}</textarea>
                         @if ($errors->has('alamat'))
                         <div class="invalid-feedback">
