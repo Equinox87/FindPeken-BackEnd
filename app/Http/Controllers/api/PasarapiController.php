@@ -11,7 +11,7 @@ class PasarapiController extends Controller
 {
     public function pasar()
     {
-        $pasar = Pasar::where('pasar_status',1)->get();
+        $pasar = Pasar::where('pasar_status', 1)->get();
         $data = array();
         $response['data'] = array();
         foreach ($pasar as $value) {

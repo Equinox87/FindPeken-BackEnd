@@ -44,7 +44,7 @@ class PasarController extends Controller
             $ext1 = explode('.', $imgname);
             $ext = strtolower($ext1[1]);
             if (in_array($ext, $format)) {
-                // $resorce->move(\base_path() . "/public/imgpasar", $imgname);
+                $resorce->move(\base_path() . "/public/imgpasar", $imgname);
                 $imgname = base64_encode($imgname);
                 echo "gambar berhasil di upload";
             } else {
