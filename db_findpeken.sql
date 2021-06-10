@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2021 at 11:10 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: Jun 10, 2021 at 03:43 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -81,8 +81,8 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `tbl_pasar` (
   `pasar_id` bigint(20) UNSIGNED NOT NULL,
   `pasar_nama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pasar_deskripsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pasar_alamat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pasar_deskripsi` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pasar_alamat` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `latitude` double DEFAULT NULL,
   `longitude` double DEFAULT NULL,
   `pasar_gambar` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
