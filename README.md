@@ -11,3 +11,6 @@
 6. Jalankan perintah : php artisan key:generate --> untuk mengenerate APP_KEY
 7. Berikutnya jalankan perintah : php artisan serve ---> untuk menjalankan server laravel
 8. Akses dengan url : localhost:8000
+9. Credential:
+    - email : admin@findpeken.com
+    - password : admindev
